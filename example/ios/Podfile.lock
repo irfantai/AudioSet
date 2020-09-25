@@ -1,0 +1,22 @@
+PODS:
+  - audioset (0.0.1):
+    - Flutter
+  - Flutter (1.0.0)
+
+DEPENDENCIES:
+  - audioset (from `.symlinks/plugins/audioset/ios`)
+  - Flutter (from `Flutter`)
+
+EXTERNAL SOURCES:
+  audioset:
+    :path: ".symlinks/plugins/audioset/ios"
+  Flutter:
+    :path: Flutter
+
+SPEC CHECKSUMS:
+  audioset: 7a80b3db3aa17f00d1a80568a989c607f894da20
+  Flutter: 0e3d915762c693b495b44d77113d4970485de6ec
+
+PODFILE CHECKSUM: aafe91acc616949ddb318b77800a7f51bffa2a4c
+
+COCOAPODS: 1.9.3
