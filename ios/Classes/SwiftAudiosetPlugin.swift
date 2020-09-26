@@ -39,16 +39,16 @@ public class SwiftAudiosetPlugin: NSObject, FlutterPlugin {
         // Method Added
         case flutterMethodPlayMusic:
             let arguments = call.arguments as! NSDictionary
-            let asset =  arguments["asset"] as! String
+            let audioPath =  arguments["path"] as! String
             let type =  arguments["type"] as! String
             let musicFile = arguments["file"] as! Int
-            self.playMusic(strResource: asset, type: type,musicFile: musicFile)
+            self.playMusic(strResource: audioPath, type: type,musicFile: musicFile)
 
         case flutterMethodPlayMusicSpeaker:
             let arguments = call.arguments as! NSDictionary
-            let speakerSide =  arguments["speakerSide"] as! Float
+            let speakerDirection =  arguments["direction"] as! Float
             let musicFile = arguments["file"] as! Int
-            self.playMusicSpeaker(speakerSide:speakerSide,musicFile:musicFile) 
+            self.playMusicSpeaker(speakerSide:speakerDirection,musicFile:musicFile) 
             
         case flutterMethodPlayMusicMuted:
             let arguments = call.arguments as! NSDictionary
@@ -111,14 +111,14 @@ public class SwiftAudiosetPlugin: NSObject, FlutterPlugin {
     //     }
     // }
 
-    func playMusicSpeaker(speakerSide:speakerSide,musicFile:musicFile) {
+    func playMusicSpeaker(direction:Float,musicFile:Int) {
         if musicFile == 1{
                 if let player = player, player.isPlaying {
-                        player.pan = speakerSide
+                        player.pan = direction
                 }
         } else {
             if let player2 = player2, player2.isPlaying {
-                        player2.pan = speakerSide
+                        player2.pan = direction
                 }
         }
         
